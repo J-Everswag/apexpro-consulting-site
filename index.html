@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ApexPro Consulting, LLC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+        content="ApexPro Consulting, LLC helps entrepreneurs grow revenue with affiliate systems, digital products, trading strategy, and AI-driven automation." />
+  <style>
+    :root {
+      --bg: #050b16;
+      --card: #0e1726;
+      --accent: #0b76ff;
+      --accent-soft: rgba(11, 118, 255, 0.12);
+      --text: #f5f7fb;
+      --muted: #9aa4b8;
+      --radius-xl: 22px;
+      --radius-lg: 18px;
+      --shadow-soft: 0 14px 40px rgba(0,0,0,0.35);
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 32px 18px 40px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 1120px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 32px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand img {
+      height: 64px;
+      width: auto;
+      display: block;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-text span:first-child {
+      font-size: 1.4rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      color: var(--accent);
+    }
+
+    .brand-text span:last-child {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+    }
+
+    .tagline {
+      font-size: 0.85rem;
+      color: var(--muted);
+      max-width: 260px;
+      text-align: right;
+    }
+
+    .hero {
+      background: radial-gradient(circle at top left, var(--accent-soft), transparent),
+                  var(--card);
+      border-radius: var(--radius-xl);
+      padding: 26px 22px 24px;
+      box-shadow: var(--shadow-soft);
+      display: grid;
+      grid-template-columns: minmax(0, 3.1fr) minmax(0, 2.4fr);
+      gap: 24px;
+      margin-bottom: 26px;
+      border: 1px solid rgba(255,255,255,0.02);
+    }
+
+    .hero h1 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .hero p {
+      font-size: 0.98rem;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .hero-highlight {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 11px;
+      border-radius: 999px;
+      background-color: rgba(11, 118, 255, 0.12);
+      color: var(--accent);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 10px;
+    }
+
+    .hero-list {
+      display: grid;
+      gap: 4px;
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+
+    .hero-list span {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .hero-list span i {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background-color: var(--accent);
+      display: inline-block;
+    }
+
+    .hero-cta {
+      margin-top: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 15px;
+      border-radius: 999px;
+      background-color: var(--accent);
+      color: #fff;
+      font-size: 0.82rem;
+      text-decoration: none;
+      font-weight: 500;
+      box-shadow: 0 8px 22px rgba(11,118,255,0.35);
+    }
+
+    .hero-side {
+      display: grid;
+      gap: 8px;
+      align-content: center;
+      padding-left: 8px;
+      border-left: 1px solid rgba(154,164,184,0.32);
+    }
+
+    .hero-side-label {
+      font-size: 0.7rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .metric {
+      font-size: 0.92rem;
+      color: var(--text);
+    }
+
+    .metric strong {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .sections {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 2fr);
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+
+    .card {
+      background-color: var(--card);
+      border-radius: var(--radius-lg);
+      padding: 14px 14px 13px;
+      border: 1px solid rgba(255,255,255,0.02);
+      box-shadow: 0 8px 26px rgba(0,0,0,0.26);
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    .card h2 {
+      font-size: 0.98rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--accent);
+    }
+
+    .card ul {
+      list-style: none;
+      margin-top: 4px;
+    }
+
+    .card ul li {
+      margin-bottom: 3px;
+    }
+
+    .pill {
+      display: inline-flex;
+      padding: 2px 9px;
+      font-size: 0.64rem;
+      border-radius: 999px;
+      border: 1px solid rgba(11,118,255,0.3);
+      color: var(--accent);
+      margin-right: 4px;
+      margin-top: 4px;
+    }
+
+    .contact {
+      color: var(--muted);
+      font-size: 0.8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      border-top: 1px solid rgba(34,43,59,0.9);
+      padding-top: 10px;
+      margin-top: 6px;
+    }
+
+    .contact a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    @media (max-width: 780px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .tagline {
+        text-align: left;
+        max-width: none;
+      }
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .hero-side {
+        border-left: none;
+        border-top: 1px solid rgba(154,164,184,0.24);
+        padding-left: 0;
+        padding-top: 10px;
+        margin-top: 4px;
+      }
+      .sections {
+        grid-template-columns: 1fr;
+      }
+      .contact {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="brand">
+      <!-- Replace src with your actual logo filename -->
+      <img src="apexpro-logo.png" alt="ApexPro Consulting, LLC Logo" />
+      <div class="brand-text">
+        <span>ApexPro</span>
+        <span>Consulting, LLC</span>
+      </div>
+    </div>
+    <div class="tagline">
+      High-leverage systems for revenue, reach, and personal freedom.
+    </div>
+  </header>
+
+  <section class="hero">
+    <div>
+      <div class="hero-highlight">
+        <span>Digital Revenue • Automation • Performance</span>
+      </div>
+      <h1>Precision-built systems for entrepreneurs who refuse to be average.</h1>
+      <p>
+        ApexPro Consulting partners with independent creators, traders, and online businesses
+        to design lean, scalable ecosystems: affiliate offers, digital products,
+        funnels, and AI-driven automations that turn attention into predictable cashflow.
+      </p>
+      <div class="hero-list">
+        <span><i></i>Affiliate &amp; partner offer architecture aligned with your brand.</span>
+        <span><i></i>Conversion-focused pages, reviews, and content frameworks.</span>
+        <span><i></i>Signal-based, rules-driven trading &amp; performance routines.</span>
+      </div>
+      <a class="hero-cta" href="mailto:apexproconsultingglobal@gmail.com">
+        Request collaboration details
+      </a>
+    </div>
+    <div class="hero-side">
+      <div class="hero-side-label">What brands can expect</div>
+      <div class="metric">
+        <strong>Qualified intent-first traffic</strong> from curated audiences in
+        business, trading, and digital performance.
+      </div>
+      <div class="metric">
+        <strong>Clean, compliant promotion</strong> via long-form reviews, short-form content,
+        and segmented email flows.
+      </div>
+      <div class="metric">
+        <strong>Data-driven optimization</strong> focused on ROI, not noise.
+      </div>
+    </div>
+  </section>
+
+  <section class="sections">
+    <div class="card">
+      <h2>What We Do</h2>
+      <p>
+        ApexPro builds and optimizes:
+      </p>
+      <ul>
+        <li>Affiliate and partner funnels for B2B &amp; B2C offers.</li>
+        <li>Digital products and evergreen monetization assets.</li>
+        <li>Simple AI automations that remove manual clutter.</li>
+        <li>Clarity frameworks for traders &amp; operators to execute cleanly.</li>
+      </ul>
+      <div>
+        <span class="pill">Content / Reviews</span>
+        <span class="pill">Funnels</span>
+        <span class="pill">Email</span>
+        <span class="pill">Automation</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>How We Promote Partners</h2>
+      <p>
+        We integrate select brand partners directly into:
+      </p>
+      <ul>
+        <li>Educational content, tool breakdowns, and comparison pages.</li>
+        <li>Short-form video and social placements with clear calls to action.</li>
+        <li>Invite-only email sequences to vetted, high-intent subscribers.</li>
+      </ul>
+      <p>
+        The focus: trust, clarity, and measurable performance for every campaign.
+      </p>
+    </div>
+  </section>
+
+  <div class="contact">
+    <div>
+      For partnership, campaigns, or white-label systems:
+      <a href="mailto:apexproconsultingglobal@gmail.com">apexproconsultingglobal@gmail.com</a>
+    </div>
+    <div>
+      Based in Florida • Operating remotely • Available for select collaborations.
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
